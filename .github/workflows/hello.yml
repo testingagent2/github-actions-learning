@@ -1,0 +1,16 @@
+name: My First GitHub Action
+
+on: push
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Hello from GitHub Actions! 🚀"
+
+      - name: Print Date
+        run: date
+
+      - name: Print Directory
+        run: ls
