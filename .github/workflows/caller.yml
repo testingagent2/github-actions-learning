@@ -1,0 +1,22 @@
+name: Caller Workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call-test-python-39:
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      python-version: "3.9"
+      environment: "development"
+    secrets:
+      MY_SECRET: ${{ secrets.MY_SECRET_KEY }}
+
+  call-test-python-311:
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      python-version: "3.11"
+      environment: "production"
+    secrets:
+      MY_SECRET: ${{ secrets.MY_SECRET_KEY }}
